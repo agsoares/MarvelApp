@@ -11,8 +11,8 @@ import ObjectMapper
 
 
 class CharacterModel: Mappable {
-    var id: Int?
-    var name: String?
+    var id: Int!
+    var name: String!
     var description: String?
     var thumbnailUrl: String?
     

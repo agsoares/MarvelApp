@@ -13,17 +13,17 @@ class CharacterListModel: Mappable {
     var count: Int!
     var limit: Int!
     var offset: Int!
-    var characterList: [CharacterModel]?
+    var characters = [CharacterModel]()
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        count   <- map["data.count"]
-        limit   <- map["data.limit"]
-        offset  <- map["data.offset"]
-        characterList <- map["data.results"]
+        count      <- map["data.count"]
+        limit      <- map["data.limit"]
+        offset     <- map["data.offset"]
+        characters <- map["data.results"]
     }
     
 }

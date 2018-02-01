@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C8A555F2022679D00A96C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A555E2022679D00A96C09 /* AppDelegate.swift */; };
-		3C8A55612022679D00A96C09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A55602022679D00A96C09 /* ViewController.swift */; };
+		3C8A55612022679D00A96C09 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A55602022679D00A96C09 /* CharacterListViewController.swift */; };
 		3C8A55642022679D00A96C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8A55622022679D00A96C09 /* Main.storyboard */; };
 		3C8A55662022679E00A96C09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C8A55652022679E00A96C09 /* Assets.xcassets */; };
 		3C8A55692022679E00A96C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8A55672022679E00A96C09 /* LaunchScreen.storyboard */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		3C8A555B2022679D00A96C09 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8A555E2022679D00A96C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C8A55602022679D00A96C09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C8A55602022679D00A96C09 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		3C8A55632022679D00A96C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C8A55652022679E00A96C09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C8A55682022679E00A96C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 				3C8A5576202277B300A96C09 /* ViewModels */,
 				3C8A5577202277C600A96C09 /* Models */,
 				3C8A5570202267C100A96C09 /* Application */,
-				3C8A55602022679D00A96C09 /* ViewController.swift */,
 				3C8A55652022679E00A96C09 /* Assets.xcassets */,
 			);
 			path = Source;
@@ -146,6 +145,7 @@
 		3C8A55752022779800A96C09 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3C8A55602022679D00A96C09 /* CharacterListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,7 +243,7 @@
 			files = (
 				3C8A55792022794500A96C09 /* MarvelAPI.swift in Sources */,
 				3C8A558A202297C300A96C09 /* CharacterModel.swift in Sources */,
-				3C8A55612022679D00A96C09 /* ViewController.swift in Sources */,
+				3C8A55612022679D00A96C09 /* CharacterListViewController.swift in Sources */,
 				3C8A55902022A66B00A96C09 /* CharacterListViewModel.swift in Sources */,
 				3C8A558C20229FEB00A96C09 /* CharacterListModel.swift in Sources */,
 				3C8A557B2022795300A96C09 /* APIKeys.swift in Sources */,
