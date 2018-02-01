@@ -15,6 +15,7 @@ class CharacterModel: Mappable {
     var name: String!
     var description: String?
     var thumbnailUrl: String?
+    var thumbnailExtension: String?
     
     required init?(map: Map) {
         
@@ -24,5 +25,8 @@ class CharacterModel: Mappable {
         id          <- map["id"]
         name        <- map["name"]
         description <- map["description"]
+        
+        thumbnailUrl       <- map["thumbnail.path"]
+        thumbnailExtension <- map["thumbnail.extension"]
     }
 }

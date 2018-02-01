@@ -35,6 +35,27 @@ class MarvelAPI {
         }
     }
     
+    func fetchComics (characterId: Int, offset: Int = 0, completionHandler: @escaping (ComicsListModel) -> ()) {
+        var parameters = calcHash()
+        
+        parameters["offset"] = offset
+        
+        let url = baseURL + "/v1/public/characters/\(characterId)/comics"
+        Alamofire
+            .request(url, method: .get, parameters: parameters, encoding: URLEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    if let comicsList = Mapper<ComicsListModel>().map(JSONObject: value) {
+                        completionHandler(comicsList)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+                
+        }
+    }
+    
     func calcHash () -> Parameters {
         let ts = Date().timeIntervalSince1970.description
         return [

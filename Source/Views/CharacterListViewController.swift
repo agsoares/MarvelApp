@@ -20,6 +20,9 @@ class CharacterListViewController: UIViewController, CharacterListViewModelDeleg
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "characterCell")
+        
+        
         viewModel.delegate = self
         viewModel.fetchCharacterList()
 
@@ -48,17 +51,25 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
-        cell.textLabel?.text = characters[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as! CharacterTableViewCell
+        cell.model = characters[indexPath.row]
+        cell.selectionStyle = .none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.updateConstraints()
         if (indexPath.row == characters.count-1) {
             viewModel.fetchCharacterList()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "characterDetailVC") as! CharacterDetailViewController
+        destination.character = characters[indexPath.row]
+        
+        navigationController?.pushViewController(destination, animated: true)
     }
     
 }
