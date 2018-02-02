@@ -30,6 +30,7 @@ class CharacterDetailViewController: UIViewController {
             title = character.name
             
         }
+        tableView.isHidden = true
         tableView.dataSource = self
         tableView.delegate = self
         configureLayout()
@@ -68,6 +69,9 @@ extension CharacterDetailViewController: UITableViewDelegate, UITableViewDataSou
 extension CharacterDetailViewController: CharacterDetailViewModelDelegate {
     func didUpdateCharacterComics(comics: [ComicsModel]) {
         self.comics.append(contentsOf: comics)
+        if(self.comics.count > 0) {
+            tableView.isHidden = false
+        }
         tableView.reloadData()
     }
     

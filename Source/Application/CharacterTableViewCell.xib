@@ -40,7 +40,6 @@
                 <constraints>
                     <constraint firstItem="IpV-0W-cVO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="8qG-EP-rq4"/>
                     <constraint firstItem="eHb-m7-NzV" firstAttribute="leading" secondItem="IpV-0W-cVO" secondAttribute="trailing" constant="20" id="BRg-9a-38h"/>
-                    <constraint firstItem="eHb-m7-NzV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="140" id="EQF-Q8-Tde"/>
                     <constraint firstItem="eHb-m7-NzV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="H1e-H3-eNY"/>
                     <constraint firstAttribute="trailingMargin" secondItem="eHb-m7-NzV" secondAttribute="trailing" constant="10" id="Swv-MA-ec3"/>
                     <constraint firstItem="IpV-0W-cVO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="hOQ-r8-9Ol"/>
