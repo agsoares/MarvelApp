@@ -20,7 +20,7 @@ class CharacterListModel: Mappable {
     }
     
     func mapping(map: Map) {
-        count      <- map["data.count"]
+        count      <- map["data.total"]
         limit      <- map["data.limit"]
         offset     <- map["data.offset"]
         characters <- map["data.results"]

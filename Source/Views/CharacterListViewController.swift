@@ -29,6 +29,16 @@ class CharacterListViewController: UIViewController, CharacterListViewModelDeleg
         configureLayout()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        title = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configureLayout()
+    }
+    
     func configureLayout () {
         title = "Character List"
         navigationController?.navigationBar.prefersLargeTitles = true

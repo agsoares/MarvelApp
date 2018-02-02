@@ -10,13 +10,13 @@ import Foundation
 
 class CharacterDetailViewModel {
     var api = MarvelAPI()
+    var offset = 0
+    
+    var comics = [ComicsModel]()
     
     var character: CharacterModel? {
         didSet {
-            guard let character = character else {
-                return
-            }
-            fetchCharacterComics(characterId: character.id)
+            fetchCharacterComics()
         }
     }
     
@@ -24,12 +24,26 @@ class CharacterDetailViewModel {
     
     fileprivate var isLoading = false
     
-    func fetchCharacterComics(characterId: Int) {
-
+    func fetchCharacterComics () {
+        guard let characterId = character?.id else {
+            return
+        }
+        if isLoading {
+            return
+        }
+        isLoading = true
+        api.fetchComics(characterId: characterId, offset: offset) { comicsList in
+            self.offset = comicsList.offset + comicsList.limit
+            self.comics.append(contentsOf: comicsList.comics)
+            self.delegate?.didUpdateCharacterComics(comics: comicsList.comics)
+            if (self.offset < comicsList.count ) {
+                self.isLoading = false
+            }
+        }
     }
     
 }
 
 protocol CharacterDetailViewModelDelegate: class {
-    func didUpdateCharacterComics (character: CharacterModel)
+    func didUpdateCharacterComics (comics: [ComicsModel])
 }

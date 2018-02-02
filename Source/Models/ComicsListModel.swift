@@ -20,7 +20,7 @@ class ComicsListModel: Mappable {
     }
     
     func mapping(map: Map) {
-        count  <- map["data.count"]
+        count  <- map["data.total"]
         limit  <- map["data.limit"]
         offset <- map["data.offset"]
         comics <- map["data.results"]
